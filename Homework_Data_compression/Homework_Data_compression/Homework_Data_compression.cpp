@@ -8,9 +8,8 @@
 #include "Header_algorithms.h"
 
 using namespace std;
-void (*fcnPtr)(string){&shannon_fano};
 
-void run(string methodName,int (*fcnPtr)(string), string data)
+/*void run(string methodName, int (*fcnPtr)(string), string data)
 {
     auto start = chrono::system_clock::now();
     string result = p(data);
@@ -21,7 +20,7 @@ void run(string methodName,int (*fcnPtr)(string), string data)
     cout << "Method: " << methodName << endl
         << "Time: " << time << endl
         << "Compression" << endl;
-}
+}*/
 
 int main()
 {
@@ -35,6 +34,6 @@ int main()
     string stringData = createDatatset(datasetSize);
     cout << stringData << endl;
 
-    run("Shannon - Fano", shannon_fano(stringData), stringData);
+    //run("Shannon - Fano", shannon_fano(stringData), stringData);
 }
 
