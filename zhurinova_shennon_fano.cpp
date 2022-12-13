@@ -2,7 +2,6 @@
 #include <vector>
 #include <string>
 #include <map>
-//#include "Header_algorithms"
 
 using namespace std;
 
@@ -78,10 +77,10 @@ void sort_by_probability(int n, node p[])
     }
 }
 
-void shennon_fano(string& text)
+string shennon_fano(string& text)
 {
     int n, i, j = 0;
-    float total = 0;
+    int total = 0;
     vector <char> abc;
     bool exit_flag = 0;
     abc.push_back(text[0]);
@@ -149,25 +148,11 @@ void shennon_fano(string& text)
         map.insert(make_pair(p[i].sym, p[i].codw));
     }
 
-    //vector <string> str;
-    //str.push_back(text[0]);
-    //for (int i = 1; i < text.size(); i++)
-    //{
-    //    str.push_back(text[i]);
-    //}
-    vector <char> str;
-
-    int number = 0;
-    for (int i = 0; i < text.size(); i++) 
+    string str;
+    for (int i = 0; i < text.size(); i++)
     {
-        cout << map[text[i]];
-        number++;
+        str += map[text[i]];
     }
-}
 
-int main()
-{
-    string text = "hello world";
-    shennon_fano(text);
-    return 0;
+    return str;
 }
